@@ -12,7 +12,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0a0a0a 0%, #0d1117 50%, #0a0e1a 100%);
+            background: linear-gradient(135deg, #0a0000 0%, #1a0500 25%, #2d0a00 50%, #1a0000 75%, #000000 100%);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
             height: 100vh;
@@ -31,14 +31,15 @@
 
         .star {
             position: absolute;
-            background: white;
+            background: radial-gradient(circle, #ff6b00, #ff4500, #ff0000);
             border-radius: 50%;
             animation: twinkle 3s infinite;
+            box-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
         }
 
         @keyframes twinkle {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.5); filter: brightness(1.5); }
         }
 
         .grid-background {
@@ -46,8 +47,8 @@
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(rgba(0, 174, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 174, 255, 0.1) 1px, transparent 1px);
+                linear-gradient(rgba(255, 50, 50, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 50, 50, 0.1) 1px, transparent 1px);
             background-size: 50px 50px;
             animation: gridMove 20s linear infinite;
             opacity: 0.3;
@@ -72,14 +73,15 @@
         h1 {
             font-size: 5em;
             font-weight: 700;
-            background: linear-gradient(45deg, #2563eb, #3b82f6, #60a5fa, #2563eb);
-            background-size: 300% 300%;
+            background: linear-gradient(45deg, #ff0000, #ff4500, #ff6b00, #ffaa00, #ff4500, #ff0000);
+            background-size: 400% 400%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: gradientShift 4s ease infinite;
+            animation: gradientShift 3s ease infinite;
             margin-bottom: 30px;
-            text-shadow: 0 0 30px rgba(37, 99, 235, 0.5);
+            text-shadow: 0 0 40px rgba(255, 69, 0, 0.8);
+            filter: drop-shadow(0 0 20px rgba(255, 100, 0, 0.6));
         }
 
         @keyframes gradientShift {
@@ -97,9 +99,9 @@
         }
 
         .skill-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 50, 0, 0.08);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(30, 58, 138, 0.3);
+            border: 2px solid rgba(255, 69, 0, 0.4);
             border-radius: 20px;
             padding: 30px 40px;
             min-width: 200px;
@@ -107,6 +109,7 @@
             animation: floatUp 3s ease-in-out infinite;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.2);
         }
 
         .skill-card:nth-child(1) {
@@ -133,7 +136,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(30, 58, 138, 0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(255, 69, 0, 0.3), rgba(255, 140, 0, 0.2), transparent);
             transform: rotate(45deg);
             animation: shimmer 3s infinite;
         }
@@ -145,8 +148,9 @@
 
         .skill-card:hover {
             transform: scale(1.1) translateY(-10px);
-            border-color: rgba(30, 58, 138, 0.8);
-            box-shadow: 0 20px 60px rgba(30, 58, 138, 0.4);
+            border-color: rgba(255, 69, 0, 0.9);
+            box-shadow: 0 20px 60px rgba(255, 69, 0, 0.6), 0 0 40px rgba(255, 100, 0, 0.4);
+            background: rgba(255, 69, 0, 0.15);
         }
 
         .skill-icon {
@@ -154,7 +158,8 @@
             margin-bottom: 15px;
             animation: rotate 4s linear infinite;
             display: inline-block;
-            color: #ffffff;
+            color: #ffaa00;
+            filter: drop-shadow(0 0 10px rgba(255, 170, 0, 0.8));
         }
 
         @keyframes rotate {
@@ -164,9 +169,10 @@
 
         .skill-name {
             font-size: 1.5em;
-            color: #2563eb;
+            color: #ff6b00;
             font-weight: 600;
             margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
         }
 
         .skill-status {
@@ -177,17 +183,18 @@
 
         .learning-badge {
             display: inline-block;
-            background: linear-gradient(45deg, #60a5fa, #3b82f6);
+            background: linear-gradient(45deg, #ff4500, #ff6b00, #ffaa00);
             padding: 5px 15px;
             border-radius: 20px;
             font-size: 0.8em;
             margin-top: 10px;
             animation: pulse 2s infinite;
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.7); }
-            50% { transform: scale(1.05); box-shadow: 0 0 20px 10px rgba(96, 165, 250, 0); }
+            0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 69, 0, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 30px 15px rgba(255, 100, 0, 0.4); }
         }
 
         .particles {
@@ -199,9 +206,10 @@
 
         .particle {
             position: absolute;
-            background: rgba(30, 58, 138, 0.6);
+            background: radial-gradient(circle, #ff6b00, #ff4500);
             border-radius: 50%;
             animation: float 15s infinite;
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
         }
 
         @keyframes float {
@@ -264,7 +272,7 @@
     <div class="footer-text">Website Made By Ozzy</div>
 
     <script>
-        // Create stars
+        // Create stars (embers)
         const starsContainer = document.getElementById('stars');
         for (let i = 0; i < 100; i++) {
             const star = document.createElement('div');
